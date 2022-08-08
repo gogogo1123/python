@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>주소록</h2>
+<a href="/">Home</a>
+<a href="write">등록</a>
+등록된 주소 : {{ address_count }}
+<table border="1">
+    <tr>
+        <Td>번호</Td>
+        <Td>이름</Td>
+         <Td>전화</Td>
+         <Td>이메일</Td>
+         <Td>주소</Td>
+
+    </tr>
+   {% for row in items %}
+    <tr>
+        <td>{{row.idx}}</td>
+        <td><a href="detail?idx={{ row.idx }}"> {{ row.name }} </a></td>
+        <td>{{ row.tel }}]</td>
+        <td>{{ row.email }}</td>
+        <Td>{{ row.address }}</Td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
